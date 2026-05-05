@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{KD\_TKF Win Rates (\%) over NLQ Baseline. Mean $\pm$ std across domains. Bold = best challenger per model. $\Delta$-Best = best minus runner-up (pp). Significance (pooled Wilcoxon vs NLQ): $^{*}p{<}0.05$,\ $^{\dagger}p{<}0.001$.}
+\label{tab:rq1_winrates}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Model} & \textbf{SPL} & \textbf{NLC} & \textbf{SPC} & \textbf{Best} & $\boldsymbol{\Delta}$\textbf{-Best} \\
+\midrule
+codellama & \textbf{48.6 (0.0)} & 38.6 (0.0)* & 45.6 (0.0) & SPL & +3.0 \\
+gemma & 46.8 (0.0) & 43.2 (0.0) & \textbf{53.9 (0.0)} & SPC & +7.1 \\
+llama3 & 53.5 (0.0) & \textbf{67.4 (0.0)*} & 32.6 (0.0)† & NLC & +13.9 \\
+mistral & 54.6 (0.0)* & 62.0 (0.0)† & \textbf{66.9 (0.0)†} & SPC & +4.9 \\
+qwen & \textbf{49.2 (0.0)} & 22.4 (0.0)† & 21.6 (0.0)† & SPL & +26.8 \\
+qwen_coder & 53.9 (0.0) & 44.6 (0.0) & \textbf{55.1 (0.0)} & SPC & +1.2 \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize SPL\,=\,SPARQL;\  NLC\,=\,NLQ\_CoT;\  SPC\,=\,SPARQL\_CoT. Baseline\,=\,NLQ (not shown).} \\
+\end{tabular}
+\end{table}
