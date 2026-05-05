@@ -1,4 +1,4 @@
-# SPARQL-Augmented LLM Evaluation Framework
+# SPARQL-Augmented LLM based Question Answering System
 
 Codebase, prompts, and evaluation pipeline for an empirical study of SPARQL-encoded query reformulations and their effect on Large Language Model performance across domain-specific Question Answering tasks.
 
