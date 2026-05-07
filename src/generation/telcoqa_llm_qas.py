@@ -608,7 +608,7 @@ class InferenceRunner:
         return GenerationConfig(
             max_new_tokens=self.config.generation_max_new_tokens,
             do_sample=True,
-            temperature=0.25,
+            temperature=0.75,
             top_p=0.9,
             top_k=50,
             pad_token_id=self.tokenizer.pad_token_id,
