@@ -1,0 +1,5 @@
+﻿Domain,Query_Form,N,complexity_score_mean,complexity_score_median,compositional_score_mean,compositional_score_median,join_count_mean,join_count_median,entity_count_mean,entity_count_median,literal_count_mean,literal_count_median
+TelcoQA,ASK,194,3.093,1.5,9.325,8.5,3.103,2.0,6.918,6.0,4.088,3.0
+TelcoQA,SELECT,1346,15.736,15.0,21.507,20.0,5.587,5.0,7.514,6.0,4.721,4.0
+FiQA,SELECT,239,9.669,8.5,12.669,12.0,4.444,4.0,4.326,4.0,11.682,11.0
+LegalQA,SELECT,2121,8.565,8.5,11.45,12.0,3.553,4.0,3.713,4.0,13.268,13.0

@@ -1,0 +1,4 @@
+﻿Domain,N,Mean_dep_tree_depth,Median_dep_tree_depth,Std_dep_tree_depth,Mean_has_passive,Median_has_passive,Std_has_passive,Mean_clause_count,Median_clause_count,Std_clause_count
+TelcoQA,1541,6.493,6.0,2.383,0.452,0.0,0.498,2.707,2.0,3.502
+FiQA,240,7.712,7.0,3.072,0.275,0.0,0.447,1.008,1.0,1.047
+LegalQA,2124,8.023,8.0,2.286,0.15,0.0,0.357,0.402,0.0,0.617

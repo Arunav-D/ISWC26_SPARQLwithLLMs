@@ -1,0 +1,4 @@
+﻿Domain,Top20_discriminative_terms
+TelcoQA,hub(0.2397); just(0.1787); new(0.1566); hi(0.1461); contract(0.1024); account(0.1013); app(0.0946); number(0.0811); know(0.0786); email(0.0749); like(0.0742); service(0.0738); need(0.0735); work(0.0723); tried(0.072); working(0.0698); use(0.0678); house(0.0676); mobile(0.0672)
+FiQA,bank(0.6415); member(0.3255); company(0.2402); regulation(0.2197); credit(0.1707); does(0.158); holding company(0.1384); holding(0.1327); loan(0.1302); transaction(0.1221); section(0.1106); rule(0.1099); act(0.1074); 12(0.098); subsidiary(0.0855); assets(0.0855); shares(0.0732); asset(0.0732); capital(0.0732); financial(0.0695)
+LegalQA,case(0.799); court(0.2411); south(0.2114); wales(0.2069); decision(0.1904); new(0.1722); regarding(0.1412); act(0.139); limited(0.1071); did(0.0717); ad(0.0684); application(0.0598); does(0.0553); 2021(0.0541); context(0.0536); civil(0.0496); law(0.0496); order(0.0496); according(0.0482); relation(0.0473)

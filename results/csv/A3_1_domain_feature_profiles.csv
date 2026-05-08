@@ -1,0 +1,4 @@
+﻿Domain,N_queries,SELECT_pct,ASK_pct,DESCRIBE_pct,CONSTRUCT_pct,mean_complexity_score,median_complexity_score,std_complexity_score,pct_FILTER,pct_OPTIONAL,pct_UNION,pct_FILTER_NOT_EXISTS,pct_GROUP_BY_or_COUNT,pct_SUBQUERY,mean_operator_diversity,mean_join_count,mean_nesting_depth,mean_compositional_score,mean_entity_count,mean_class_count,mean_literal_count,mean_ttr,mean_vocab_tokens,pct_nary,pct_negation,mean_line_count,mean_token_count
+TelcoQA,1542,87.3,12.6,0.1,0.0,14.13,13.5,7.18,52.3,100.0,8.4,29.9,0.0,87.4,4.92,5.27,2.22,19.96,7.44,7.98,4.64,0.3874,76.9,5.3,29.9,28.6,112.3
+FiQA,240,99.6,0.4,0.0,0.0,9.65,8.5,4.95,0.0,100.0,17.5,4.6,0.4,72.1,1.98,4.44,2.03,12.66,4.32,2.97,11.68,0.5277,51.1,0.0,4.6,28.5,193.6
+LegalQA,2124,99.9,0.0,0.0,0.0,8.56,8.5,2.09,0.0,100.0,4.2,1.3,0.0,99.9,2.06,3.55,2.01,11.45,3.71,1.23,13.27,0.5212,48.6,0.0,1.3,30.1,185.7

@@ -1,0 +1,4 @@
+﻿Domain_A,Domain_B,TF-IDF_cosine
+TelcoQA,FiQA,0.062
+TelcoQA,LegalQA,0.0757
+FiQA,LegalQA,0.0943

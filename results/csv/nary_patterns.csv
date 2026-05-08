@@ -1,0 +1,4 @@
+﻿Domain,N,Queries_with_Nary,Pct_Nary,Mean_Nary,Max_Nary
+TelcoQA,1542,81,5.3,0.06,2
+FiQA,240,0,0.0,0.0,0
+LegalQA,2124,0,0.0,0.0,0

@@ -1,0 +1,4 @@
+﻿Domain,N,Mean_operator_diversity,Median_operator_diversity,Std_operator_diversity,Mean_join_count,Median_join_count,Std_join_count,Mean_nesting_depth,Median_nesting_depth,Std_nesting_depth,Mean_compositional_score,Median_compositional_score,Std_compositional_score
+TelcoQA,1542,4.917,5.0,1.803,5.269,5.0,2.713,2.219,2.0,0.575,19.957,19.5,6.909
+FiQA,240,1.983,2.0,0.696,4.442,4.0,1.222,2.029,2.0,0.169,12.658,12.0,2.825
+LegalQA,2124,2.057,2.0,0.246,3.552,4.0,0.699,2.007,2.0,0.084,11.45,12.0,1.273

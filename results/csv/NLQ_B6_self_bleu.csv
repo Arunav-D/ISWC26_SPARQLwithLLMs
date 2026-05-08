@@ -1,0 +1,4 @@
+﻿Domain,N,Self_BLEU_unigram,Interpretation
+TelcoQA,1541,0.945,Lower = more lexically diverse corpus
+FiQA,240,0.8843,Lower = more lexically diverse corpus
+LegalQA,2124,0.8542,Lower = more lexically diverse corpus

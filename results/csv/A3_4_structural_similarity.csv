@@ -1,0 +1,7 @@
+﻿Type,Pair,Jaccard_mean,TF-IDF_cosine
+Intra-domain,TelcoQA internal,0.5091,
+Intra-domain,FiQA internal,0.4841,
+Intra-domain,LegalQA internal,0.5512,
+Inter-domain,TelcoQA vs FiQA,,0.1954
+Inter-domain,TelcoQA vs LegalQA,,0.1688
+Inter-domain,FiQA vs LegalQA,,0.507

@@ -1,0 +1,7 @@
+﻿Type,Pair,Cosine_mean,Wasserstein
+Intra-domain,TelcoQA internal,0.2518,
+Intra-domain,FiQA internal,0.256,
+Intra-domain,LegalQA internal,0.3111,
+Inter-domain,TelcoQA vs FiQA,0.1665,0.0345
+Inter-domain,TelcoQA vs LegalQA,0.1155,0.0318
+Inter-domain,FiQA vs LegalQA,0.4488,0.027

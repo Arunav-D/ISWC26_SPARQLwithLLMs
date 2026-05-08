@@ -1,0 +1,152 @@
+﻿Domain,Complexity_Level,NLQ,SPARQL,complexity_score,operator_diversity,join_count,nesting_depth,query_form,has_negation,has_annotation,line_count,vocab_tokens,ttr,Selection_note
+FiQA,Multi-hop,[Auto-inferred] ASK query with 4 join(s),"PREFIX fi:       <https://www.hkma.gov.hk/ontology/>
+PREFIX property: <https://www.hkma.gov.hk/ontology/property/>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?result ?regulatoryCapital ?auditFindings WHERE {
+  ?service fi:query_type  ""RegulatoryCompliance"" .
+  ?service fi:institute   ""HKMA"" .
+  ?service fi:document    ""Anti-Money Laundering and Counter-Terrorist Financing Ordinance"" .
+  ?service fi:description ""Can banks ask corporate customers to provide information of its ownership?""@en .
+  ?service fi:complianceStatus  ?result .
+  OPTIONAL { ?service fi:regulatoryCapital ?regulatoryCapital . }
+  OPTIONAL { ?service fi:auditFindings ?auditFindings . }
+  OPTIONAL {
+    _:queryMeta rdf:type          <https://www.hkma.gov.hk/ontology/SPARQLQuery> ;
+                rdfs:comment      ""Can banks ask corporate customers to provide information of its ownership?""@en ;
+                skos:definition   ""Can banks ask corporate customers to provide information of its ownership?""@en ;
+                <https://www.hkma.gov.hk/ontology/property/intent>        ""ASK_BOOLEAN""^^xsd:string ;
+                <https://www.hkma.gov.hk/ontology/property/questionType>  ""POLAR""^^xsd:string ;
+                <https://www.hkma.gov.hk/ontology/property/queryType>     ""RegulatoryCompliance""^^xsd:string ;
+                <https://www.hkma.gov.hk/ontology/property/institute>     ""HKMA""^^xsd:string ;
+                <https://www.hkma.gov.hk/ontology/property/focusVariable> """"^^xsd:string .
+  }
+}
+",4.5,1,4,2,ASK,0,1,27,23,0.6522,Closest to median complexity_score within stratum
+FiQA,Aggregation,[Auto-inferred] SELECT query with 5 join(s) and 4 operator types with aggregation (GROUP BY / COUNT),"PREFIX fi:       <https://www.federalreserve.gov/ontology/>
+PREFIX property: <https://www.federalreserve.gov/ontology/property/>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?result ?equityStructure ?costOfCapital WHERE {
+  ?service fi:query_type  ""CorporateFinance"" .
+  ?service fi:institute   ""Federal Reserve"" .
+  ?service fi:document    ""225"" .
+  ?service fi:description ""After a group acting in concert has filed a notice under the Change in Bank Control Act and Regulation Y, a new person may seek to join the group by acquiring ownership or control of shares. What filing requirements apply to this acquisition?""@en .
+  ?service fi:debtStructure  ?result .
+  OPTIONAL { ?service fi:equityStructure ?equityStructure . }
+  OPTIONAL { ?service fi:costOfCapital ?costOfCapital . }
+  { ?notice rdf:type fi:Notice . ?organisation rdf:type fi:Organisation . ?bank rdf:type fi:Bank . ?regulation rdf:type fi:Regulation . }
+  UNION
+  { ?requirement rdf:type fi:Requirement . }
+  UNION
+  { ?requirement fi:appliesTo ?acquisition . }
+  OPTIONAL {
+    _:queryMeta rdf:type          <https://www.federalreserve.gov/ontology/SPARQLQuery> ;
+                rdfs:comment      ""After a group acting in concert has filed a notice under the Change in Bank Control Act and Regulation Y, a new person may seek to join the group by acquiring ownership or control of shares. What filing requirements apply to this acquisition?""@en ;
+                skos:definition   ""After a group acting in concert has filed a notice under the Change in Bank Control Act and Regulation Y, a new person may seek to join the group by acquiring ownership or control of shares. What filing requirements apply to this acquisition?""@en ;
+                <https://www.federalreserve.gov/ontology/property/intent>        ""SELECT_GENERAL""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/questionType>  ""WH_WHAT""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/queryType>     ""CorporateFinance""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/institute>     ""Federal Reserve""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/focusVariable> ""?result""^^xsd:string .
+  }
+}
+",20.5,4,5,2,SELECT,0,1,32,67,0.5373,Closest to median complexity_score within stratum
+FiQA,Negation,[Auto-inferred] SELECT query with 4 join(s) and 3 operator types including negation (FILTER NOT EXISTS / MINUS),"PREFIX fi:       <https://www.federalreserve.gov/ontology/>
+PREFIX property: <https://www.federalreserve.gov/ontology/property/>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?result ?technologyInvestments ?cybersecurityMetrics WHERE {
+  ?service fi:query_type  ""TechnologyAndFintech"" .
+  ?service fi:institute   ""Federal Reserve"" .
+  ?service fi:document    ""223"" .
+  ?service fi:description ""A bank holding company owns less than 25 percent of the equity capital of company A. The bank holding company’s subsidiary member bank lends money to company A, which is not considered an affiliate of the bank under Regulation W. Does the attribution rule apply to the member bank’s loan to company A solely because of the bank holding company’s ownership of shares in company A?""@en .
+  ?service fi:digitalAdoption  ?result .
+  OPTIONAL { ?service fi:technologyInvestments ?technologyInvestments . }
+  OPTIONAL { ?service fi:cybersecurityMetrics ?cybersecurityMetrics . }
+  OPTIONAL { ?service fi:hasPercentage ""25""^^xsd:decimal . }
+  FILTER NOT EXISTS { ?which fi:relatedTo  # verb: consider ?affiliate . }
+  OPTIONAL {
+    _:queryMeta rdf:type          <https://www.federalreserve.gov/ontology/SPARQLQuery> ;
+                rdfs:comment      ""A bank holding company owns less than 25 percent of the equity capital of company A. The bank holding company’s subsidiary member bank lends money to company A, which is not considered an affiliate of the bank under Regulation W. Does the attribution rule apply to the member bank’s loan to company A solely because of the bank holding company’s ownership of shares in company A?""@en ;
+                skos:definition   ""A bank holding company owns less than 25 percent of the equity capital of company A. The bank holding company’s subsidiary member bank lends money to company A, which is not considered an affiliate of the bank under Regulation W. Does the attribution rule apply to the member bank’s loan to company A solely because of the bank holding company’s ownership of shares in company A?""@en ;
+                <https://www.federalreserve.gov/ontology/property/intent>        ""SELECT_GENERAL""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/questionType>  ""WH_WHICH""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/queryType>     ""TechnologyAndFintech""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/institute>     ""Federal Reserve""^^xsd:string ;
+                <https://www.federalreserve.gov/ontology/property/focusVariable> ""?result""^^xsd:string .
+  }
+}
+",13,3,4,3,SELECT,1,1,29,103,0.3592,Closest to median complexity_score within stratum
+LegalQA,Multi-hop,[Auto-inferred] SELECT query with 2 join(s) and 2 operator types,"PREFIX legal:    <https://www.legislation.nsw.gov.au/>
+PREFIX property: <https://www.legislation.nsw.gov.au/property/>
+PREFIX case:     <https://www.caselaw.nsw.gov.au/>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?appealDetails WHERE {
+  ?legal_entity property:legal_interpretation ?appealDetails .
+  ?legal_entity property:jurisdiction ""nsw"" .
+  ?legal_entity property:document_type ""Case Law"" .
+  ?legal_entity property:legal_topic ""procedural"" .
+  ?legal_entity property:description ""In the case of Miller v Galderisi [2009] NSWCA 353, what were the issues that arose on appeal?""@en .
+  ?legal_entity property:caseReference ""[2009] NSWCA 353"" .
+  OPTIONAL {
+    _:queryMeta rdf:type          <https://www.legislation.nsw.gov.au/SPARQLQuery> ;
+                rdfs:comment      ""In the case of Miller v Galderisi [2009] NSWCA 353, what were the issues that arose on appeal?""@en ;
+                skos:definition   ""In the case of Miller v Galderisi [2009] NSWCA 353, what were the issues that arose on appeal?""@en ;
+                <https://www.legislation.nsw.gov.au/property/intent>         ""SELECT_APPEAL""^^xsd:string ;
+                <https://www.legislation.nsw.gov.au/property/questionType>   ""WH_WHAT""^^xsd:string ;
+                <https://www.legislation.nsw.gov.au/property/legalQueryType> ""CaseLaw""^^xsd:string ;
+                <https://www.legislation.nsw.gov.au/property/propertyCategory> ""legal_interpretation""^^xsd:string ;
+                <https://www.legislation.nsw.gov.au/property/jurisdiction>   ""nsw""^^xsd:string ;
+                <https://www.legislation.nsw.gov.au/property/focusVariable>  ""?appealDetails""^^xsd:string .
+  }
+}
+",5.5,2,2,2,SELECT,0,1,28,33,0.6061,Closest to median complexity_score within stratum
+LegalQA,Negation,[Auto-inferred] SELECT query with 4 join(s) and 3 operator types including negation (FILTER NOT EXISTS / MINUS),"PREFIX legal:    <https://www.legislation.tas.gov.au/>
+PREFIX property: <https://www.legislation.tas.gov.au/property/>
+PREFIX case:     <https://www.caselaw.tas.gov.au/>
+PREFIX owl:      <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?date ?caseOutcome ?decisionDate WHERE {
+  ?legal_entity property:legal_context ?date .
+  ?legal_entity property:jurisdiction ""tasmania"" .
+  ?legal_entity property:document_type ""Case Law"" .
+  ?legal_entity property:legal_topic ""general_law"" .
+  ?legal_entity property:description ""Under the Gas (Distribution System) Order 2001 of Tasmania, when does a pipeline not form part of a distribution system?""@en .
+  OPTIONAL { ?legal_entity property:caseOutcome ?caseOutcome . }
+  OPTIONAL { ?legal_entity property:decisionDate ?decisionDate . }
+  FILTER NOT EXISTS { ?pipeline legal:relatedTo  # unresolved verb: form ?part . }
+  OPTIONAL {
+    _:queryMeta rdf:type          <https://www.legislation.tas.gov.au/SPARQLQuery> ;
+                rdfs:comment      ""Under the Gas (Distribution System) Order 2001 of Tasmania, when does a pipeline not form part of a distribution system?""@en ;
+                skos:definition   ""Under the Gas (Distribution System) Order 2001 of Tasmania, when does a pipeline not form part of a distribution system?""@en ;
+                <https://www.legislation.tas.gov.au/property/intent>         ""SELECT_TIMING""^^xsd:string ;
+                <https://www.legislation.tas.gov.au/property/questionType>   ""WH_WHEN""^^xsd:string ;
+                <https://www.legislation.tas.gov.au/property/legalQueryType> ""CaseLaw""^^xsd:string ;
+                <https://www.legislation.tas.gov.au/property/propertyCategory> ""legal_context""^^xsd:string ;
+                <https://www.legislation.tas.gov.au/property/jurisdiction>   ""tasmania""^^xsd:string ;
+                <https://www.legislation.tas.gov.au/property/focusVariable>  ""?date""^^xsd:string .
+  }
+}
+",11.5,3,4,3,SELECT,1,1,30,35,0.5429,Closest to median complexity_score within stratum

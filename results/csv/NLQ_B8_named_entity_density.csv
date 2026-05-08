@@ -1,0 +1,4 @@
+﻿Domain,N,mean_ne_count,mean_ne_density,mean_ne_ORG,mean_ne_PERSON,mean_ne_GPE,mean_ne_DATE,mean_ne_MONEY,mean_ne_PERCENT,mean_ne_LAW,mean_ne_NORP,mean_ne_PRODUCT,mean_ne_EVENT,mean_ne_TIME,mean_ne_CARDINAL
+TelcoQA,1541,3.984,0.04,0.998,0.419,0.418,0.836,0.139,0.007,0.021,0.013,0.051,0.005,0.167,0.717
+FiQA,240,1.367,0.042,0.517,0.017,0.167,0.133,0.008,0.058,0.154,0.017,0.017,0.004,0.0,0.192
+LegalQA,2124,3.569,0.111,1.337,0.313,0.107,0.768,0.002,0.001,0.125,0.034,0.065,0.004,0.002,0.582
